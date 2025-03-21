@@ -1,0 +1,1279 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="《从入门到放弃：反连平台的搭建与技术本质》, 杂乱的书屋">
+    <meta name="description" content="最近在使用nuclei的poc探测资产时，遇到了”未找到变量 interactsh-url“的错误提示，导致poc利用失败；而使用Yakit探测资产时，虽然响应包的字段明确表示已探测到漏洞，但反连平台却毫无反应。经过几天的深入研究，我终于理">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>《从入门到放弃：反连平台的搭建与技术本质》 | 杂乱的书屋</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">杂乱的书屋</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">杂乱的书屋</div>
+        <div class="logo-desc">
+            
+            ...
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《从入门到放弃：反连平台的搭建与技术本质》</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/DNS/">
+                                <span class="chip bg-color">DNS</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%8D%E8%BF%9E%E5%B9%B3%E5%8F%B0/">
+                                <span class="chip bg-color">反连平台</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">云服务器</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-03-05
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>最近在使用nuclei的poc探测资产时，遇到了”未找到变量 <code>interactsh-url</code>“的错误提示，导致poc利用失败；而使用Yakit探测资产时，虽然响应包的字段明确表示已探测到漏洞，但反连平台却毫无反应。经过几天的深入研究，我终于理清了”反连平台”的概念与实践要点。</p>
+<p>本文中所讨论的反连平台均指DNS反连平台。</p>
+<style>
+    @keyframes rainbow { /* 新增动画关键帧 */
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+
+    .superlight {
+        font-weight: bold;
+        background: linear-gradient(45deg, 
+            #ff0000, #ff7f00, #ffff00, #00ff00,
+            #0000ff, #4b0082, #9400d3);
+        background-size: 400% 400%;
+        animation: rainbow 5s ease infinite;
+        -webkit-background-clip: text;  /* 兼容webkit内核 */
+        background-clip: text;          /* 新增标准属性 */
+        color: transparent;             /* 保持文字透明 */
+    }
+</style>
+
+
+
+<h2 id="为什么连不上反连平台？"><a href="#为什么连不上反连平台？" class="headerlink" title="为什么连不上反连平台？"></a>为什么连不上反连平台？</h2><p>通过实践和参考一些技术文章后，我发现了一个关键事实：<strong>网络上公用的、知名的反连平台，已经被企业甚至国家列入了黑名单。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/343401.html">技术 | 关于Antenna的隐匿性部署 - FreeBuf网络安全行业门户</a></p>
+<p>例如，对于nuclei的官方反连平台<code>*.oast.*</code>，在中国部分地区已无法连接，这正是我使用nuclei时出现”未找到变量 <code>interactsh-url</code>“的根本原因。</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E5%AE%98%E6%96%B9%E5%B9%B3%E5%8F%B0%E8%B6%85%E6%97%B6.png"></p>
+<blockquote>
+<p>来自官方的建议：</p>
+</blockquote>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E5%AE%98%E6%96%B9%E5%91%BC%E5%90%81.png"></p>
+<p>由于我习惯使用nuclei进行探测工作，因此我开始着手解决无法连接官方反连平台的问题，并构想了几种可行的解决方案。</p>
+<h2 id="下策：更换反连平台变量，让自身可以连接"><a href="#下策：更换反连平台变量，让自身可以连接" class="headerlink" title="下策：更换反连平台变量，让自身可以连接"></a>下策：更换反连平台变量，让自身可以连接</h2><p>前面提到，我无法连接反连平台是因为nuclei官方反连在中国部分地区被墙了。那么，我是否可以通过修改变量，更换到一个可用的反连平台呢？</p>
+<p>在nuclei的模板中，我们使用<code>&#123;&#123;interactsh-url&#125;&#125;</code>来指定此poc需要使用的反连平台，我们可以将<code>&#123;&#123;interactsh-url&#125;&#125;</code>修改为自定义变量，例如<code>&#123;&#123;interactsh&#125;&#125;</code>，然后添加配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">variables:
+  interactsh: test.eyes.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这样，我们就成功指定了一个可用的反连平台。</p>
+<p>虽然这个下策解决了我们自身无法连接反连平台的问题，但目标服务器仍有可能无法连接反连平台。</p>
+<p>更严重的是，这导致了一个新问题：nuclei只与使用interactsh搭建且使用<code>&#123;&#123;interactsh-url&#125;&#125;</code>作为变量的反连平台有联动。如果自创一个变量，以下这类响应判断就完全失效了：</p>
+<pre class="line-numbers language-none"><code class="language-none">matchers:
+  - type: word
+    part: interactsh_protocol
+    words:
+      - &quot;dns&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这意味着nuclei与反连平台之间失去了联系，即使反连平台被ping通，nuclei也不会有任何反应。</p>
+<p>更何况，要采用这种方法，就必须修改所有模板中的<code>&#123;&#123;interactsh-url&#125;&#125;</code>变量，下策之所以被称为下策确实有其道理所在😅</p>
+<h2 id="中策：开启tun模式，让自身连接反连平台"><a href="#中策：开启tun模式，让自身连接反连平台" class="headerlink" title="中策：开启tun模式，让自身连接反连平台"></a>中策：开启tun模式，让自身连接反连平台</h2><p>既然中国网络连不上nuclei官方反连平台，那开启代理不就解决问题了吗？经过测试，我发现在nuclei中通过-proxy参数指定代理是无效的，我们的请求并不会通过代理去访问反连平台，因此需要选择一种能够强制所有流量走代理的模式。</p>
+<p>在clash中，TUN模式通过创建一张虚拟网卡，在网络层处理所有请求。如果使用其他工具，可能需要自行研究适配方法。总之，使用clash的TUN模式可以简单高效地让nuclei正常使用官方反连平台。</p>
+<p>但问题依然存在：如果目标服务器限制了对官方反连平台的ping请求，我们可能会错过发现潜在漏洞的机会。</p>
+<h2 id="上策：自建反连平台"><a href="#上策：自建反连平台" class="headerlink" title="上策：自建反连平台"></a>上策：自建反连平台</h2><h3 id="前置篇：服务器与域名"><a href="#前置篇：服务器与域名" class="headerlink" title="前置篇：服务器与域名"></a>前置篇：服务器与域名</h3><p>自建反连平台需要一台服务器和至少一个域名。</p>
+<p>经过一番折腾，我将踩到的坑总结如下：</p>
+<p>①：如果服务器或域名有一个在国内，那就必须备案。</p>
+<p><a target="_blank" rel="noopener" href="https://linux.do/t/topic/11694/35?page=2">腾讯云VPS能否绕过备案 - 开发调优 - LINUX DO</a></p>
+<p>试图打擦边球只会让事情变得更加复杂。</p>
+<p>因此，我的域名与服务器均选择了国外的资源。</p>
+<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>最终我选择在<code>godaddy</code>购买域名，第一年仅需10元左右。</p>
+<p>有一种方案是选择免费域名，但可能会遇到<code>跑路/薅羊毛时间结束/需要绑定外汇卡/无法托管到cf/审核时间长</code>等问题。折腾一番后还是决定付费购买😅</p>
+<h4 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h4><p>最终在<code>RackNerd</code>购买，第一年费用约$11。</p>
+<p>关于免费服务器：我也曾尝试过一些方案，例如<code>hax.co.id</code>这类需要看广告、每周签到续费的ipv6服务器，但遇到了<code>即使切ie模式依旧显示请禁用广告拦截器/申请不了/需要外汇卡/被薅秃了</code>等问题。最终无法战胜这些障碍，只能选择付费方案。</p>
+<p>踩到的坑：cloudcone。最初我被它的按小时计费模式吸引（只要一周内关闭服务器即可控制成本），但实际使用时发现，分配的IP地址有较大几率被长城防火墙屏蔽，想要获得可用IP要么付费申请，要么不断尝试重新分配。就这样被坑了$5😭</p>
+<p>其他选择：超级便宜的”小鸡”服务器。在服务器领域，有一个词汇叫做<code>小鸡</code>，它们是从主服务器——<code>母鸡</code>上被”生”下来的，缺点是配置较差，需要共用IP与流量，优点是价格极为便宜。例如在淘宝上，我找到了5元&#x2F;年的<code>小鸡</code>服务器，虽然需要实名与被监管，但服务器在国外，不需要备案，这或许是值得考虑的方向。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>为什么上策要最后才提及呢？<strong>因为上策是需要真金白银的😅</strong></p>
+<p>这也解释了为什么，即使从一开始我就知道上策能够彻底解决问题，但仍选择了各种曲折的解法，去探索白嫖的可能性。但很显然，白嫖之路充满了坎坷和挑战。<span class=superlight>[文末有彩蛋]</span></p>
+<blockquote>
+<p>基础前言:</p>
+<p>interactsh是nuclei指定的反连平台，使用它并配置漏洞模板，就能在探测时将响应目标显示在nuclei上。</p>
+<p>interactsh分为客户端和服务端两部分。服务端作为DNS服务器，负责记录请求；客户端则连接服务端，从中拉取属于自己子域名的请求记录。一个通常的部署方案是：在服务器上部署服务端；在需要时，在本地机器上开启客户端并连接到服务端。</p>
+</blockquote>
+<h4 id="为什么说反连平台不能隐藏"><a href="#为什么说反连平台不能隐藏" class="headerlink" title="为什么说反连平台不能隐藏"></a>为什么说反连平台不能隐藏</h4><p>最初对反连平台的部署缺乏深入了解，看到以下两篇文章后，我决定部署一个”高匿名”的反连平台，却不知道这里面暗藏巨坑。</p>
+<p><a target="_blank" rel="noopener" href="https://forum.butian.net/share/1055">奇安信攻防社区-0成本快速创建高匿HTTP&#x2F;DNS LOG</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/343401.html">技术 | 关于Antenna的隐匿性部署 - FreeBuf网络安全行业门户</a></p>
+<p>由于我之前对<code>DNS解析</code>理解不深，在部署过程中配置A记录、NS记录时折腾了很长时间，犯了一些错误。实际部署效果未达预期，我也在reddit、discord和各搜索引擎上尝试寻找解决方案，却始终未能解决我的疑惑。最终通过学习<code>DNS解析</code>、<code>ICMP</code>和<code>DNS粘合记录</code>等知识点，才理解了问题的本质。</p>
+<p>在此我不打算详述整个探索过程，<strong>而是直接指出这两篇文章的关键错误之处：</strong></p>
+<p><strong>首先，反连平台为什么需要隐藏？</strong></p>
+<p>当你ping一个地址，例如<code>ping log.test.com</code>时，系统会先进行DNS解析，获取log.test.com的IP地址；然后进行ICMP发包，源地址是你的主机，目标地址是解析出的IP地址。</p>
+<p>显然，这里的log.test.com的IP地址就是你的DNS服务器地址。当你在对方服务器上执行<code>ping log.test.com</code>时，对方能够找到你的DNS服务器。</p>
+<p>那么，按照上述两篇文章所说，我们能否利用CDN服务，把log.test.com的IP地址隐藏起来呢？</p>
+<p><strong>答案是不能。</strong></p>
+<p>一个错误的理解模型是这样的：</p>
+<p>你的主机 → cf_ip → DNS服务器ip</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E5%81%87dns%E8%A7%A3%E6%9E%90.png"></p>
+<p>假设ping log.test.com时，可以让CloudFlare作为反向代理，接收ping命令，然后由CF将ping命令传递给DNS服务器。这样，对方主机只能知道CF的IP，而无法获知DNS服务器的真实IP。</p>
+<p>但实际情况是：</p>
+<p>你的主机 → cf_ip X DNS服务器ip</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E7%9C%9Fdns%E8%A7%A3%E6%9E%90.png"></p>
+<p><strong>CDN只能代理HTTP&#x2F;HTTPS流量，它的一个主要作用就是防止DDOS攻击，怎么会把ping命令转发给被它保护的主机呢？</strong></p>
+<p>所以，不设置CDN时，ping log.test.com会让你的DNS服务器收到对方的ping命令，对方也能获知你的DNS服务器地址。</p>
+<p>而设置CDN后，你的DNS服务器接收不到ping命令，对方只能获知CF的IP地址，此时对方实际上ping的是CF的IP。</p>
+<h4 id="其他情况"><a href="#其他情况" class="headerlink" title="其他情况"></a>其他情况</h4><p>虽然CDN无法传递ICMP包，那么自建一个反向代理是否可行呢？技术上应该是可行的，但缺少了大公司的”障眼法”，当A、B服务器都归你所有时，反代与否似乎意义不大。也许可以在”肉鸡”上建立反向代理，增加跳转次数，降低被追踪的风险？</p>
+<p>另外，切记DNS服务器上不要部署个人博客😅 一旦被溯源就难以抵赖了。</p>
+<h4 id="Interactsh官方教程"><a href="#Interactsh官方教程" class="headerlink" title="Interactsh官方教程"></a>Interactsh官方教程</h4><p>下面让我们按照官方教程，建立一个interactsh反连平台：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/interactsh#interactsh-server">projectdiscovery&#x2F;interactsh：一个 OOB 交互收集服务器和客户端库 — projectdiscovery&#x2F;interactsh: An OOB interaction gathering server and client library</a></p>
+<blockquote>
+<p>以 GoDaddy 为例：</p>
+<p>添加 → 提交 ns1，ns2 使用您的 SERVER_IP 作为值</p>
+<p>更改域名服务器 → 我将使用自己的域名服务器 → 提交 ns1.INTERACTSH_DOMAIN, ns2.INTERACTSH_DOMAIN</p>
+</blockquote>
+<h5 id="原理部分："><a href="#原理部分：" class="headerlink" title="原理部分："></a>原理部分：</h5><p>更深入地说，首先了解DNS解析的部分流程：</p>
+<p>根域名服务器(.) → 顶级域名服务器(com) → 权威域名服务器(ns.test.com) → 服务器IP地址</p>
+<p>假设我们有一个域名test.com，然后将ns1.test.com和ns2.test.com设置为我们的<code>权威域名服务器</code>。</p>
+<p>这时出现一个问题：访问ns1.test.com实际上无法解析到我们的服务器IP，因为顶级域名服务器会将ns1.test.com这个域名交给ns1.test.com的权威域名服务器处理，也就是它自己——ns1.test.com。</p>
+<p>这就形成了死循环，顶级域名服务器无法正确处理。这就是为什么需要第一步中的DNS HOSTS设置。这种技术被称为<strong>粘合记录（glue records）</strong>。</p>
+<blockquote>
+<p>这些记录通常在父域名服务器中设置，确保任何尝试查找子域名服务器地址的请求都能获得正确的IP地址，从而解析该子域的记录。</p>
+<p>例如，如果有一个名为”ns1.example.com”的名称服务器负责”example.com”，那么在.com的顶级域名服务器（TLD）中就需要有一个Glue record来指明”ns1.example.com”的IP地址。没有Glue records，任何尝试解析example.com域名下记录的请求都将因缺乏起始点而失败。</p>
+</blockquote>
+<p>我的理解是，Godaddy这类域名注册商在<code>顶级域名服务器</code>上设置了一条类似于A记录的<strong>粘合记录</strong>：</p>
+<p>ns1.example.com → 你的服务器IP</p>
+<p>这样，顶级域名服务器就能通过ns1.test.com找到你的服务器IP地址。</p>
+<p>按照教程配置好并运行后，interactsh-server的运行界面如下：</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E5%AE%98%E6%96%B9%E9%85%8D%E7%BD%AE-%E5%8F%8D%E8%BF%9E%E5%B9%B3%E5%8F%B0%E5%90%AF%E5%8A%A8.png"></p>
+<p>HTTP页面如下：</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E5%8F%8D%E8%BF%9E%E5%B9%B3%E5%8F%B0-http%E9%A1%B5%E9%9D%A2.png"></p>
+<p>这里我建议修改<code>默认页面</code>，比如我改成了HelloWorld，因为fofa等平台会收录这个指纹。【这也是后面彩蛋篇的灵感来源】</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/Hello_World.png"></p>
+<blockquote>
+<p>关于CF与interactsh的补充说明：</p>
+<p>前面提到CF无法隐藏DNS服务器，但它能隐藏HTTP流量。例如访问log.test.com时可以获得CDN的隐藏效果（虽然意义不大）。</p>
+<p>但是！我测试发现，Nuclei会因为证书问题导致无法访问自己的DNS服务器。即使在使用interactsh时添加-sa参数忽略https检查，也只是不建立SSL证书，nuclei依然无法连接。</p>
+<p>总之，为DNS反连平台配置CDN纯属费力不讨好。</p>
+</blockquote>
+<h4 id="反连平台的使用"><a href="#反连平台的使用" class="headerlink" title="反连平台的使用"></a>反连平台的使用</h4><p>关于使用方法，推荐阅读以下文章，重点在于理解<strong>反连服务器</strong>与<strong>客户端</strong>之间的交互方式：</p>
+<p><a target="_blank" rel="noopener" href="https://jacobriggs.io/blog/posts/how-to-integrate-nuclei-with-interactsh-and-notify-31">如何将 Nuclei 与 Interactsh 和 Notify 集成 - Jacob Riggs | 博客 — How to integrate Nuclei with Interactsh and Notify - Jacob Riggs | Blog</a></p>
+<h3 id="Yakit反连平台"><a href="#Yakit反连平台" class="headerlink" title="Yakit反连平台"></a>Yakit反连平台</h3><p>Yakit的漏洞管理功能更符合我的需求，而且由于Yakit官方的DNS反连平台教程存在一些问题，在此也简要说明。</p>
+<p>Yakit的反连平台名为Yak Bridge。</p>
+<p>①：官方教程中没有明确指出<code>DNS反连</code>需要配置额外参数。</p>
+<p><a target="_blank" rel="noopener" href="https://yaklang.io/docs/intro">页面未找到 | Yak 程序语言 — Yak：致力于安全能力融合的语言 | Yak Program Language </a> 这是官网教程。</p>
+<p>它引导用户访问 <a target="_blank" rel="noopener" href="https://github.com/yaklang/yak-bridge-docker">yaklang&#x2F;yak-bridge-docker: 如何在公网上使用 yak bridge？（适用于 Yakit 反向服务器） — yaklang&#x2F;yak-bridge-docker: How to use yak bridge in public net ? (For Yakit Reverse Server)</a></p>
+<p>但这个GitHub项目的使用教程非常简陋。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/544964782">想拥有自己的 Yak Bridge？ DNSLog、ICMPLog、TCPLog 全部免费 - 知乎</a> 这是<strong>更有价值的</strong>官方知乎教程。</p>
+<p><code>docker run -it --rm --net=host v1ll4n/yak-bridge yak bridge --secret &#123;可选&#125; --dnslog --domain &#123;your_domain&#125;</code> 使用dnslog时，必须添加–dnslog参数和–domain参数。该教程还详细介绍了Yakit使用DNSlog时的配置方法。</p>
+<p>②：Yak Bridge并不像Interartsh那样周到，它留下了53端口问题。</p>
+<p><a target="_blank" rel="noopener" href="https://forum.butian.net/share/1055">奇安信攻防社区-0成本快速创建高匿HTTP&#x2F;DNS LOG</a></p>
+<p>文末提供了53端口问题的解决方案。</p>
+<h2 id="扩展篇——DNS污染"><a href="#扩展篇——DNS污染" class="headerlink" title="扩展篇——DNS污染"></a>扩展篇——DNS污染</h2><p>前文提到企业和国家可能通过DNS污染等技术使域名无法解析，那么这具体是如何实现的呢？</p>
+<p>一个完整的DNS解析流程大致如下：</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/dns%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B.png"></p>
+<p>（这里缺少了本地HOSTS文件与DNS缓存的部分）</p>
+<p>如果是域名注册商、云服务器提供者或ISP（如电信等），如何使某个域名无法解析？</p>
+<p>访问者 | 危险域名 | ISP等</p>
+<p>ISP修改本地DNS服务器配置：本地DNS服务器通常由ISP默认分配。如果访问该网站的用户修改了本地DNS服务器，这种方法就失效了，因此实用性不高。</p>
+<p>ISP修改权威域名服务器配置：DNS服务器遍布全球，国内外都有，ISP无法修改全球所有的DNS服务器配置。</p>
+<p>通过防火墙进行DNS污染：</p>
+<h3 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h3><p>由于常规DNS查询没有任何认证机制，且DNS查询通常基于无连接不可靠的UDP协议，<strong>查询者只能接受最先到达的格式正确的结果，而丢弃之后收到的结果。</strong></p>
+<blockquote>
+<p>你的设备只认第一个返回的DNS解析结果，因此只需要在传输路径上设置一个拦截点，检测到指定域名的DNS解析请求时，立即伪造一份假响应发送给你。由于是在中间路径提前发送的，所以会比正确结果更快到达你的设备。</p>
+<p>为确保DNS污染的有效性，负责污染的设备必须离你和全国网民足够近，而运营商就是最佳选择。国内运营商都是国企，本身就是防火墙体系的组成部分，包括国内各大互联网公司也都参与其中。</p>
+<p>除了国家级防火墙，各地运营商也有自己的黑名单，例如移动的”墙中墙”就很出名。此外，反诈劫持也是由地方相关部门将域名提交给当地运营商来实施劫持的。因此，即使没有大防火墙，运营商也一直在进行DNS污染&#x2F;劫持&#x2F;抢答这类行为。</p>
+</blockquote>
+<p>一条未经证实的信息表明，修改<code>长城防火墙的配置</code>即可实现对特定危险域名的DNS污染，而原理就是这个<code>防火墙</code>离你更近，它检测到你的包之后，就会抢先一步发给你一个错误的包。</p>
+<h2 id="彩蛋篇"><a href="#彩蛋篇" class="headerlink" title="彩蛋篇"></a><span class=superlight>彩蛋篇</span></h2><p>在部署反连平台的过程中，我对interactsh的理解越来越深入。正如前文所述，interactsh分为客户端与服务端，那么，我们是否可以用自己的<code>客户端</code>连接别人的<code>服务端</code>呢？</p>
+<p>开启自己的客户端与服务端，命令如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">interactsh-client <span class="token parameter variable">-s</span> kazike.online    <span class="token comment">#在自己主机上开启</span>
+./interactsh-server <span class="token parameter variable">-domain</span> kazike.online <span class="token parameter variable">-auth</span> -http-index banner.html <span class="token parameter variable">-t</span> <span class="token punctuation">&#123;</span>token<span class="token punctuation">&#125;</span> <span class="token parameter variable">-sa</span>
+<span class="token comment"># 在服务器上开启</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>服务端开启了认证模式，同时关闭https模式以方便抓包。客户端分两次连接，一次无token，一次有token，用WireShark抓包，结果如下：</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E6%97%A0%E8%AE%A4%E8%AF%81%E5%8F%91%E5%8C%85.png"></p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E6%97%A0%E8%AE%A4%E8%AF%81%E5%8F%91%E5%8C%85%E7%BB%93%E6%9E%9C.png"></p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E6%9C%89%E8%AE%A4%E8%AF%81%E5%8F%91%E5%8C%85.png"></p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E6%9C%89%E8%AE%A4%E8%AF%81%E5%8F%91%E5%8C%85%E7%BB%93%E6%9E%9C.png"></p>
+<p>从中可以看出，流程为：携带一系列数据与可选的Authorization请求头访问&#x2F;register接口；返回结果为401或200。</p>
+<p>于是我在fofa上搜索<code>body=&quot;Interactsh Server&quot; &amp;&amp; host!=&quot;oast&quot; &amp;&amp; is_domain=true</code>，获得了1000+个网站。</p>
+<p>用Yakit发送请求测试：</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E4%B8%80%E4%B8%AA%E5%A4%A7%E7%BD%91%E6%8D%9E%E4%B8%8B%E5%8E%BB.png"></p>
+<p>由于我没有添加请求体，所以返回400表示该服务器没有启用认证。在1000+服务器中约有一半不可访问，70+没有启用认证。</p>
+<p>将这70+个域名导入微步进行筛选，去除被判定为危险域名的，还剩60+个可用域名。</p>
+<p>于是我们就可以用自己的<code>客户端</code>，去连接这些没有密码的<code>服务端</code>了。让别人去ping这个域名，我们的客户端也能接收到消息😋 </p>
+<p>这样也算是白嫖成功了🤤 不过为避免沾染因果，还是建议自行部署反连平台。</p>
+<p><img src="/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/%E7%99%BD%E5%AB%96%E6%88%90%E5%8A%9F.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">acccccc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/">http://example.com/2025/03/05/cong-ru-men-dao-fang-qi-fan-lian-ping-tai-de-da-jian-yu-ji-zhu-ben-zhi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">acccccc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/DNS/">
+                                    <span class="chip bg-color">DNS</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%8D%E8%BF%9E%E5%B9%B3%E5%8F%B0/">
+                                    <span class="chip bg-color">反连平台</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">云服务器</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/03/05/dang-wo-shi-tu-yong-dai-ma-lian-jie-suo-you-shen-tou-gong-ju-shi-fa-sheng-liao-shi-me/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="当我试图用代码连接所有渗透工具时，发生了什么">
+                        
+                        <span class="card-title">当我试图用代码连接所有渗透工具时，发生了什么</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            acccccc
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/03/05/bai-piao-fofa-de-zhong-ji-zhi-nan-dai-li-chi-lun-xun-ji-zhu-xiang-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="《白嫖FOFA的终极指南：代理池轮询技术详解》">
+                        
+                        <span class="card-title">《白嫖FOFA的终极指南：代理池轮询技术详解》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            acccccc
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <a href="/about" target="_blank">acccccc</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">12.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
