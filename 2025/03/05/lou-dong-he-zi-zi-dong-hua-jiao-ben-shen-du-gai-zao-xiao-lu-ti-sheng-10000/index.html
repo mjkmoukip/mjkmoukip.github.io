@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="漏洞盒子自动化脚本深度改造，效率提升1000%！, 杂乱的书屋">
-    <meta name="description" content="2月份折腾了好一会，也是成功挖到260+漏洞，可问题是，这些漏洞该怎么提交呢？写报告、搜集公司归属、整理渗透图片…一个漏洞至少折腾10分钟，260+个漏洞就要花费43个小时，按每天工作8小时计算，差不多要连续奋战5.375天😅
-好在之前我">
+    <meta name="keywords" content="漏洞盒子自动化脚本深度改造，效率提升10000%！, 杂乱的书屋">
+    <meta name="description" content="2月份折腾了好一会，也是成功挖到260+漏洞，可问题是，这些漏洞该怎么提交呢？
+写报告、搜集公司归属、整理渗透图片…一个漏洞至少折腾10分钟，260+个漏洞就要花费43个小时。
+按每天工作8小时计算，差不多要连续奋战5.375天😅
+好在之">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>漏洞盒子自动化脚本深度改造，效率提升1000%！ | 杂乱的书屋</title>
+    <title>漏洞盒子自动化脚本深度改造，效率提升10000%！ | 杂乱的书屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -338,7 +340,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">漏洞盒子自动化脚本深度改造，效率提升1000%！</h1>
+                    <h1 class="description center-align post-title">漏洞盒子自动化脚本深度改造，效率提升10000%！</h1>
                 </div>
             </div>
         </div>
@@ -416,7 +418,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>2月份折腾了好一会，也是成功挖到260+漏洞，可问题是，这些漏洞该怎么提交呢？写报告、搜集公司归属、整理渗透图片…一个漏洞至少折腾10分钟，260+个漏洞就要花费43个小时，按每天工作8小时计算，差不多要连续奋战5.375天😅</p>
+                <p>2月份折腾了好一会，也是成功挖到260+漏洞，可问题是，这些漏洞该怎么提交呢？</p>
+<p>写报告、搜集公司归属、整理渗透图片…一个漏洞至少折腾10分钟，260+个漏洞就要花费43个小时。</p>
+<p>按每天工作8小时计算，差不多要连续奋战5.375天😅</p>
 <p>好在之前我就已经找到了一个《漏洞盒子自动化脚本3.0》，还没用上呢，最近查找的时候，发现又多了一个<a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/419104.html">漏洞盒子批量提交脚本5.1.26 - FreeBuf网络安全行业门户</a>   ok，那么开始使用。</p>
 <h3 id="修改前——脚本的不便"><a href="#修改前——脚本的不便" class="headerlink" title="修改前——脚本的不便"></a>修改前——脚本的不便</h3><p>但这个脚本用起来，并没有我想象中的那么美好😭：</p>
 <ul>
@@ -438,18 +442,18 @@
 <li><strong>异步处理与纠错机制</strong>：在提升处理速度的同时，增加了容错能力，让脚本更加稳定可靠。</li>
 </ul>
 <h3 id="流程介绍"><a href="#流程介绍" class="headerlink" title="流程介绍"></a>流程介绍</h3><h5 id="①：准备漏洞基础信息"><a href="#①：准备漏洞基础信息" class="headerlink" title="①：准备漏洞基础信息"></a><strong>①：准备漏洞基础信息</strong></h5><p>首先，需要在mid-bug表中填入漏洞的基本信息。必需的信息包括：URL（漏洞点的url）、请求包、响应包、漏洞类型。</p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/mid-bug%E7%9A%84%E6%A0%BC%E5%BC%8F.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/mid-bug%E7%9A%84%E6%A0%BC%E5%BC%8F.png"></p>
 <ul>
 <li>如果是sql注入，把影响参数填一下</li>
 <li>“漏洞类型”指：sql注入、xxx公司xxxx处存在xxx漏洞，只要自己能识别就行</li>
 </ul>
 <p>推荐：使用Yakit的WebFuzzer进行发包（这样才有请求包与响应包），然后在History中，搜索并筛选出命中漏洞同时导出。</p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/Yakit%E7%9A%84History.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/Yakit%E7%9A%84History.png"></p>
 <h5 id="②：配置基本信息"><a href="#②：配置基本信息" class="headerlink" title="②：配置基本信息"></a>②：配置基本信息</h5><p>填写config.yaml，确定漏洞的基本参数。<strong>最重要的一点是，确定这个漏洞需要提交几张图片</strong>。如果需要调整，记得在photo函数中同步修改代码。</p>
 <blockquote>
 <p>默认情况下，系统会生成这3张图：归属图、漏洞主页图、poc图</p>
 </blockquote>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/config%E7%9A%84%E9%83%A8%E5%88%86%E7%9C%9F%E5%AE%B9.png" alt="config.yaml的部分真容"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/config%E7%9A%84%E9%83%A8%E5%88%86%E7%9C%9F%E5%AE%B9.png" alt="config.yaml的部分真容"></p>
 <h5 id="③：自动生成基础数据"><a href="#③：自动生成基础数据" class="headerlink" title="③：自动生成基础数据"></a>③：自动生成基础数据</h5><p>运行main-产出表.py，通过basic_process函数处理，让mid-bug表<strong>自动</strong>获得漏洞id、漏洞主页和根域名信息。</p>
 <h5 id="④：获取网站信息"><a href="#④：获取网站信息" class="headerlink" title="④：获取网站信息"></a>④：获取网站信息</h5><p>此时会弹出指引，要求使用[爱站网]，通过根域名，去得到权重、备案号、公司(False)，<strong>并手动</strong>添加到mid-bug中并进行处理。<a target="_blank" rel="noopener" href="https://pl.aizhan.com/">站长工具_网站综合批量查询_爱站网</a></p>
 <ul>
@@ -614,13 +618,13 @@
     img<span class="token punctuation">.</span>save<span class="token punctuation">(</span>output_path<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E5%A4%87%E6%A1%88%E4%BE%8B%E5%AD%90.png"></p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E4%B8%BB%E9%A1%B5%E4%BE%8B%E5%AD%90.png"></p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/POC%E4%BE%8B%E5%AD%90.png"></p>
+<h5 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E5%A4%87%E6%A1%88%E4%BE%8B%E5%AD%90.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E4%B8%BB%E9%A1%B5%E4%BE%8B%E5%AD%90.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/POC%E4%BE%8B%E5%AD%90.png"></p>
 <blockquote>
 <p>图片处理的速度主要看访问首页并截图的速度，每种照片200+张，实际上时间开销大头在访问首页并截图那边，即使异步还是比较慢，每秒大约拍2~3张.【电脑配置好可以修改<code>协程数</code>】</p>
 </blockquote>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E4%B8%80%E6%AC%A1%E6%80%A7%E5%A4%84%E7%90%86%E5%A4%A7%E9%87%8F%E5%9B%BE%E7%89%87.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E4%B8%80%E6%AC%A1%E6%80%A7%E5%A4%84%E7%90%86%E5%A4%A7%E9%87%8F%E5%9B%BE%E7%89%87.png"></p>
 <h4 id="智能地区与行业匹配"><a href="#智能地区与行业匹配" class="headerlink" title="智能地区与行业匹配"></a>智能地区与行业匹配</h4><h5 id="功能简介-实现思路-1"><a href="#功能简介-实现思路-1" class="headerlink" title="功能简介&amp;实现思路"></a>功能简介&amp;实现思路</h5><p>这个模块是为了适应<code>enscan</code>而存在的，前文提到，enscan会爬取并返回不那么完美的<code>注册地址</code>跟<code>经营范围</code>,所以要对通过模块，对结果进行二次加工。</p>
 <p><strong>地址处理</strong>：通过cpca库，对省市进行识别，并根据漏洞盒子的菜单进行颗粒度对齐。</p>
 <p><strong>行业分类</strong>：通过fuzzywuzzy库，把enscan得到的<code>经营范围</code>与漏洞盒子提供的<code>经营范围</code>进行模糊字符串匹配。</p>
@@ -689,8 +693,8 @@
     <span class="token keyword">return</span> best_match
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="效果展示-1"><a href="#效果展示-1" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E6%B5%8B%E8%AF%95.png"></p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E7%BB%93%E6%9E%9C.png"></p>
+<h5 id="效果展示-1"><a href="#效果展示-1" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E6%B5%8B%E8%AF%95.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%E7%BB%93%E6%9E%9C.png"></p>
 <h4 id="批量信息采集与处理"><a href="#批量信息采集与处理" class="headerlink" title="批量信息采集与处理"></a>批量信息采集与处理</h4><h5 id="功能简介-实现思路-2"><a href="#功能简介-实现思路-2" class="headerlink" title="功能简介&amp;实现思路"></a>功能简介&amp;实现思路</h5><p>提交漏洞不仅需要报告，还需要很多辅助信息。我的设计思路是通过一张表格&#x2F;input&#x2F;mid-bug.xlsx，集中管理所有必要信息。相比魔改前的版本，现在的表格中大部分字段都是自动化填充的，无需重复操作。</p>
 <p>上文说到了，该工作流启动的基本条件是填写表中的字段：</p>
 <p><strong>URL（漏洞点的url），请求包，响应包，漏洞类型</strong></p>
@@ -826,8 +830,8 @@
             logging<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"更新原始数据时出错: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>e<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="效果展示-2"><a href="#效果展示-2" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E4%BA%A7%E5%87%BA%E8%A1%A8-%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%9B%BE.png"></p>
-<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%9C%80%E7%BB%88%E5%86%85%E5%AE%B9.png"></p>
+<h5 id="效果展示-2"><a href="#效果展示-2" class="headerlink" title="效果展示"></a>效果展示</h5><p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E4%BA%A7%E5%87%BA%E8%A1%A8-%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%9B%BE.png"></p>
+<p><img src="/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%9C%80%E7%BB%88%E5%86%85%E5%AE%B9.png"></p>
 <h4 id="漏洞提交优化"><a href="#漏洞提交优化" class="headerlink" title="漏洞提交优化"></a>漏洞提交优化</h4><h5 id="功能简介-实现思路-3"><a href="#功能简介-实现思路-3" class="headerlink" title="功能简介&amp;实现思路"></a>功能简介&amp;实现思路</h5><p>漏洞提交是另外一个主模块，得到完整的mid-bug表、config.yaml文件、图片文件夹后，就可以进行提交漏洞了。</p>
 <p>漏洞提交的大部分功能原本就来自于<a target="_blank" rel="noopener" href="https://www.freebuf.com/sectool/419104.html">漏洞盒子批量提交脚本5.1.26 - FreeBuf网络安全行业门户</a>  ，我只做了些小改动：</p>
 <ul>
@@ -1002,7 +1006,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/">http://example.com/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-1000/</a>
+                    <a href="http://example.com/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/">http://example.com/2025/03/05/lou-dong-he-zi-zi-dong-hua-jiao-ben-shen-du-gai-zao-xiao-lu-ti-sheng-10000/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1353,7 +1357,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.4k</span>
+                        class="white-color">12.3k</span>
             
             
             
